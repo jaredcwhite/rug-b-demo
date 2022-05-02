@@ -13,7 +13,7 @@ When does a component in Bridgetown render? Let's find out!
 
   <%= render Timebox.new %>
 
-  <turbo-frame id="timeboxed" src="/timebox">
+  <turbo-frame id="timeboxed" src="/timebox/">
     <p><em>Loading…</em></p>
   </turbo-frame>
 
