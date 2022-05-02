@@ -1,0 +1,35 @@
+---<%
+r.is do
+  r.get do
+    last_params = bridgetown_site.data.delete :last_params
+
+    render_with data: {
+      layout: :page,
+      title: "Submit a Form!",
+      params: last_params || {}
+    }
+  end
+
+  r.post do
+    bridgetown_site.data.last_params = r.params
+    
+    r.redirect
+  end
+end
+%>---
+
+<% if resource.data.params.present? %>
+  <p>You submitted these parameters!</p>
+
+  <pre>
+<%= resource.data.params.inspect %>
+  </pre>
+<% end %>
+
+<form method="post">
+  <p><label>Name: <input type="text" name="name" /></p>
+
+  <p><label>Email: <input type="email" name="email" /></p>
+
+  <p><button type="submit">Submit</button></p>
+</form>

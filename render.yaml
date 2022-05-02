@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: rug-b-demo
+    env: static
+    buildCommand: bin/bridgetown deploy
+    staticPublishPath: ./output
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: BRIDGETOWN_ENV
+        value: production
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-XSS-Protection
+        value: "1; mode=block"
+      - path: /*
+        name: X-Content-Type-Options
+        value: "nosniff"
+      - path: /*
+        name: Strict-Transport-Security
+        value: "max-age=15552000; includeSubDomains"
+      - path: /*
+        name: Referrer-Policy
+        value: "no-referrer-when-downgrade"
+      - path: /*
+        name: Cache-Control
+        value: "public, max-age=86400, s-max-age=86400"
+    routes:
+      - type: rewrite
+        source: /timebox/*
+        destination: https://rug-b-demo-ssr.onrender.com/timebox/*
+      - type: rewrite
+        source: /forms/*
+        destination: https://rug-b-demo-ssr.onrender.com/forms/*
+  - type: web
+    name: rug-b-demo-ssr
+    env: ruby
+    plan: free
+    buildCommand: bundle install && yarn install && bin/bridgetown frontend:build
+    startCommand: bin/bridgetown start
+    envVars:
+      - key: BRIDGETOWN_ENV
+        value: production
