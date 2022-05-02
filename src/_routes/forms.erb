@@ -1,20 +1,18 @@
 ---<%
-r.is do
-  r.get do
-    last_params = bridgetown_site.data.delete :last_params
+r.get do
+  last_params = bridgetown_site.data.delete :last_params
 
-    render_with data: {
-      layout: :page,
-      title: "Submit a Form!",
-      params: last_params || {}
-    }
-  end
+  render_with data: {
+    layout: :page,
+    title: "Submit a Form!",
+    params: last_params || {}
+  }
+end
 
-  r.post do
-    bridgetown_site.data.last_params = r.params
-    
-    r.redirect
-  end
+r.post do
+  bridgetown_site.data.last_params = r.params
+  
+  r.redirect
 end
 %>---
 

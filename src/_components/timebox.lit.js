@@ -3,7 +3,8 @@ import { LitElement, html, css } from "lit"
 
 export class TimeBoxLit extends LitElement {
   static properties = {
-    isHydrated: { type: "boolean" }
+    currentTime: { type: String },
+    isHydrated: { type: Boolean }
   }
 
   static styles = css`
@@ -16,7 +17,13 @@ export class TimeBoxLit extends LitElement {
     }
   `
 
-  get currentTime() {
+  constructor() {
+    super()
+
+    this.currentTime = this.getTime()
+  }
+
+  getTime() {
     const date = new Date()
     const options = {
       year: 'numeric', month: 'long', day: 'numeric',
@@ -28,6 +35,7 @@ export class TimeBoxLit extends LitElement {
 
   firstUpdated() {
     this.isHydrated = true
+    this.currentTime = ` ${this.getTime()} ` // not sure why extra spaces are needed on hydration
   }
 
   render() {
