@@ -42,7 +42,7 @@ export class TimeBoxLit extends LitElement {
     return html`
       The time this box was rendered:<br/><br/>
       <strong>${this.currentTime}</strong><br/><br/>
-      ${this.isHydrated ? "Rendered by Lit (Client-Side)" : "Rendered by Lit (SSR)"}
+      ${this.isHydrated ? "Rendered by Lit (Client-Side)" : "Rendered by Lit (SSG)"}
     `;
   }
 }
