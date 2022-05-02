@@ -1,0 +1,5 @@
+<time-box>
+  The time this box was rendered:<br/><br/>
+  <strong><%= @current_time %></strong><br/><br/>
+  <em><%= Bridgetown::Current.site.ssr? ? "Rendered by Ruby SSR" : "Rendered by Ruby SSG" %></em>
+</time-box>

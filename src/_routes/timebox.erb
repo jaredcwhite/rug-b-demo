@@ -1,0 +1,11 @@
+---<%
+r.get do
+  render_with data: {
+    frame_id: "timeboxed"
+  }
+end
+%>---
+
+<turbo-frame id="<%= resource.data.frame_id %>">
+  <%= render Timebox.new %>
+</turbo-frame>
