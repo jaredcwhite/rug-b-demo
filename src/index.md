@@ -21,9 +21,7 @@ When does a component in Bridgetown render? Let's find out!
     <p slot="loading"><em>Loading…</em></p>
   </time-box-lit>
 
-  <%= lit data: {} do %>
-    <time-box-lit>
-      <p slot="loading"><em>Loading…</em></p>
-    </time-box-lit>
+  <%= lit :time_box_lit do %>
+    <p slot="loading"><em>Loading…</em></p>
   <% end %>
 </section>

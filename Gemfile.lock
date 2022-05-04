@@ -1,29 +1,16 @@
 GIT
   remote: https://github.com/bridgetownrb/bridgetown-lit-renderer.git
-  revision: 086b3361228c7c7bbb8c1ee45802305ca432e45a
+  revision: 0674240971cf7a28815ac7edd3fe12dd19f26f19
   branch: 2-0-wip
   specs:
     bridgetown-lit-renderer (1.1.1)
       bridgetown (>= 0.15, < 2.0)
       random-port (>= 0.5)
 
-GEM
-  remote: https://rubygems.org/
+GIT
+  remote: https://github.com/bridgetownrb/bridgetown.git
+  revision: f6c2dbffb510bef6c870bf066d540e023a7db05d
   specs:
-    activemodel (7.0.2.4)
-      activesupport (= 7.0.2.4)
-    activesupport (7.0.2.4)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 1.6, < 2)
-      minitest (>= 5.1)
-      tzinfo (~> 2.0)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
-    amazing_print (1.4.0)
-    bridgetown (1.0.0)
-      bridgetown-builder (= 1.0.0)
-      bridgetown-core (= 1.0.0)
-      bridgetown-paginate (= 1.0.0)
     bridgetown-builder (1.0.0)
       bridgetown-core (= 1.0.0)
     bridgetown-core (1.0.0)
@@ -53,6 +40,24 @@ GEM
       zeitwerk (~> 2.5)
     bridgetown-paginate (1.0.0)
       bridgetown-core (= 1.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (7.0.2.4)
+      activesupport (= 7.0.2.4)
+    activesupport (7.0.2.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    amazing_print (1.4.0)
+    bridgetown (1.0.0)
+      bridgetown-builder (= 1.0.0)
+      bridgetown-core (= 1.0.0)
+      bridgetown-paginate (= 1.0.0)
     bridgetown-routes (1.0.0)
       bridgetown-core (= 1.0.0)
       roda-route_list (>= 2.1)
@@ -138,6 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   bridgetown (~> 1.0.0)
+  bridgetown-core!
   bridgetown-lit-renderer (~> 1.1)!
   bridgetown-routes (~> 1.0.0)
   puma (~> 5.6)
