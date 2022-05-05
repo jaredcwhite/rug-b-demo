@@ -82,3 +82,32 @@ hr {
   border-top: 2px dotted #bbb;
   margin: 3rem 0;
 }
+
+label {
+  font-weight: bold;
+}
+
+input {
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  font-weight: normal;
+  border: solid 1px #bbb;
+  border-radius: 3px;
+  display: block;
+  max-width: 30ch;
+  padding: 0.5ch;
+}
+
+button {
+  font: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  background: var(--action-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5ch 2.5ch;
+  font-weight: bold;
+}
